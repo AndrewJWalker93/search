@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+Search Player  <input type="text" id="fname" name="fname" onchange="find()"> <div id="result"></div>
+
+<p id="0""></p>
+<p id="1""></p>
+<p id="2""></p>
+<p id="3""></p>
+<p id="4""></p>
+<p id="5""></p>
+<p id="6""></p>
+
+
+<script>
+var string = '[{"ID":"3673963","Manager":"Joshua Clarke","Players":[{"Name":"Alex McCarthy","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Trent Alexander-Arnold","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Ben Davies","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"James Justin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Heung-Min Son","ID":null,"Captain":true,"ViceCaptain":false},{"Name":"Allan Saint-Maximin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"James Rodríguez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Mohamed Salah","ID":null,"Captain":false,"ViceCaptain":true},{"Name":"Dominic Calvert-Lewin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Harry Kane","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Aleksandar Mitrović","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Jed Steer","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Dale Stephens","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Kyle Walker-Peters","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Ben Johnson","ID":null,"Captain":false,"ViceCaptain":false}]},{"ID":"3158637","Manager":"Roberto Firmemeo","Players":[{"Name":"Vicente Guaita","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Romain Saïss","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Tariq Lamptey","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Timothy Castagne","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Jorge Luiz Frello Filho","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"James Rodríguez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Mohamed Salah","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Heung-Min Son","ID":null,"Captain":false,"ViceCaptain":true},{"Name":"Jamie Vardy","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Dominic Calvert-Lewin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Harry Kane","ID":null,"Captain":true,"ViceCaptain":false},{"Name":"Mathew Ryan","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Tyrick Mitchell","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Yves Bissouma","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Kyle Walker-Peters","ID":null,"Captain":false,"ViceCaptain":false}]},{"ID":"4540596","Manager":"Luke Garmonsway","Players":[{"Name":"Rui Pedro dos Santos Patrício","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Trent Alexander-Arnold","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Tariq Lamptey","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Kyle Walker-Peters","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Harvey Barnes","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Pierre-Emerick Aubameyang","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Kalvin Phillips","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Mohamed Salah","ID":null,"Captain":false,"ViceCaptain":true},{"Name":"Jamie Vardy","ID":null,"Captain":true,"ViceCaptain":false},{"Name":"Aleksandar Mitrović","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Raúl Jiménez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Alex McCarthy","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Harrison Reed","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Bernardo Fernandes da Silva Junior","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Barry Douglas","ID":null,"Captain":false,"ViceCaptain":false}]},{"ID":"2246561","Manager":"William Lumb","Players":[{"Name":"Emiliano Martínez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Andrew Robertson","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Romain Saïss","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Benjamin Chilwell","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Heung-Min Son","ID":null,"Captain":true,"ViceCaptain":false},{"Name":"Jack Grealish","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"James Rodríguez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Mohamed Salah","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Neal Maupay","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Harry Kane","ID":null,"Captain":false,"ViceCaptain":true},{"Name":"Dominic Calvert-Lewin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"David Martin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Tyrick Mitchell","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Yves Bissouma","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Luke Ayling","ID":null,"Captain":false,"ViceCaptain":false}]},{"ID":"2766505","Manager":"Rob Langman","Players":[{"Name":"Nick Pope","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Virgil van Dijk","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Gabriel Magalhães","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Matt Doherty","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Tariq Lamptey","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Phil Foden","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Pierre-Emerick Aubameyang","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"James Rodríguez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Timo Werner","ID":null,"Captain":false,"ViceCaptain":true},{"Name":"Dominic Calvert-Lewin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Harry Kane","ID":null,"Captain":true,"ViceCaptain":false},{"Name":"Mathew Ryan","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Declan Rice","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Mario Lemina","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Neco Williams","ID":null,"Captain":false,"ViceCaptain":false}]},{"ID":"417320","Manager":"Jack Hewitt","Players":[{"Name":"Mathew Ryan","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Andrew Robertson","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Trent Alexander-Arnold","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Tyrick Mitchell","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Charlie Taylor","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Heung-Min Son","ID":null,"Captain":true,"ViceCaptain":false},{"Name":"James Rodríguez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Mohamed Salah","ID":null,"Captain":false,"ViceCaptain":true},{"Name":"Phil Foden","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Dominic Calvert-Lewin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Raúl Jiménez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"David Button","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Conor Coady","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"André-Frank Zambo Anguissa","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Keinan Davis","ID":null,"Captain":false,"ViceCaptain":false}]},{"ID":"1471831","Manager":"Nik Humphries","Players":[{"Name":"Emiliano Martínez","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"James Justin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Romain Saïss","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Timothy Castagne","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Phil Foden","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Heung-Min Son","ID":null,"Captain":true,"ViceCaptain":false},{"Name":"James Rodríguez","ID":null,"Captain":false,"ViceCaptain":true},{"Name":"Gareth Bale","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Jack Grealish","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Dominic Calvert-Lewin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Harry Kane","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"David Martin","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Patrick Bamford","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Lucas Digne","ID":null,"Captain":false,"ViceCaptain":false},{"Name":"Héctor Bellerín","ID":null,"Captain":false,"ViceCaptain":false}]}]'
+
+var obj = JSON.parse(string);
+
+for(i = 0; i < obj.length; i++){
+    document.getElementById(i).innerHTML = '<p style="color:red">' + obj[i].Manager + "</p>";
+
+    for(j = 0; j < obj[i].Players.length; j++){
+    document.getElementById(i).innerHTML += "<br>" + obj[i].Players[j].Name;
+    if (obj[i].Players[j].ViceCaptain == true){
+        document.getElementById(i).innerHTML += " (VC)"
+    }
+
+    if (obj[i].Players[j].Captain == true){
+        document.getElementById(i).innerHTML += " (C)"
+    }
+
+    if (j == 10){
+        document.getElementById(i).innerHTML += "<br> <br> Bench <br>";
+    }
+    }
+}
+    function find(){
+        var text = "";
+
+        let playersFound = [];
+
+        for(i = 0; i < obj.length; i++){
+            for(j = 0; j < obj[i].Players.length; j++){
+                if (obj[i].Players[j].Name.toLowerCase().includes(document.getElementById("fname").value.toLowerCase())){
+
+                    if (playersFound.includes(obj[i].Players[j].Name) == false){
+                        playersFound.push(obj[i].Players[j].Name);
+                    }
+                }
+            }
+        }
+
+
+        for(f = 0; f < playersFound.length; f++){
+            text += playersFound[f] + ": ";
+            for(i = 0; i < obj.length; i++){
+                for(j = 0; j < obj[i].Players.length; j++){
+                  if (obj[i].Players[j].Name == playersFound[f]){
+                     text += obj[i].Manager + " " + (obj[i].Players[j].Captain ? "(C)" : " ") + (obj[i].Players[j].ViceCaptain ? "(VC)" : " ") +" ";
+                    }
+                }
+            }
+
+            text += "<br>"
+        }
+
+        document.getElementById("result").innerHTML = text;
+    }
+
+
+</script>
+
+</body>
+</html>
